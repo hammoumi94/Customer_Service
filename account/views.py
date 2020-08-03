@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.forms import inlineformset_factory # to make a multi_forms fields
 from .models import *
 from .forms import *
+from .filters import *
 
 def home(request):
     orders = Order.objects.all()
@@ -22,7 +23,9 @@ def customer(request, pk):
     customer = Customer.objects.get(id=pk)
     orders = customer.order_set.all()
     total_orders = orders.count()
-    context = {'customer':customer, 'orders':orders, 'total_orders': total_orders}
+    myfilter = Orderfilter(request.GET, queryset=orders)
+    orders = myfilter.qs
+    context = {'customer':customer, 'orders':orders, 'total_orders': total_orders, 'myfilter': myfilter}
     return render(request,"customer.html", context)
 
 def createorder(request, pk):
