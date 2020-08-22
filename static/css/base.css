@@ -10,6 +10,9 @@ body{
 #orders-pending{
   background-color: #7CD1C0;
 }
-#logo{
+.go{
+  font-size: 18px;
+  color: crimson;
+  margin-right: 20px;
   
 }
