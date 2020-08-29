@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account',#new
-    'django_filters', #new
+    'account',  # new
+    'django_filters',  # new
 ]
 
 MIDDLEWARE = [
@@ -121,9 +121,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-#new
-#pour ajouté des images et des video
+# new
+# pour ajouté des images et des video
 MEDIA_URL = '/images/'
-STATICFILES_DIRS =[
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+# url to see images
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+#new: send mail configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'youssefelhammoumi94@gmail.com'
+EMAIL_HOST_PASSWORD = '0602092841'
