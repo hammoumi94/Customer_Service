@@ -26,7 +26,7 @@ SECRET_KEY = '-h0f6@)6ndrdaahlq9j&njxjsf@!i_)94g45vy&4*@j#^n&t@4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['customerservicedj.herokuapp.com', '127.0.0.1:8000']
 
 
 # Application definition
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'cm1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Dj_customer_service',
+        'USER': 'postgres',
+        'PASSWORD': 'kamikasikas',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
