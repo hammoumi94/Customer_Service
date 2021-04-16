@@ -53,7 +53,7 @@ django-bootstrap4==1.1.1
 django-cors-headers==3.2.1
 django-countries==5.3.3
 django-crispy-forms==1.7.2
-django-debug-toolbar==1.10.1
+django-debug-toolbar==1.11.1
 django-filter==2.3.0
 djangorestframework==3.11.0
 docutils==0.16
